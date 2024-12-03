@@ -14,3 +14,4 @@
 |2557. Hello World|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2557.%E2%80%85Hello%E2%80%85World/Hello%E2%80%85World.py)|
 |2558. A＋B － 2|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2558.%E2%80%85A%EF%BC%8BB%E2%80%85%EF%BC%8D%E2%80%852/README.md)|
 |2588. 곱셈|[링크](./%EB%B0%B1%EC%A4%80/Bronze/2588.%E2%80%85%EA%B3%B1%EC%85%88/%EA%B3%B1%EC%85%88.py)|
+|3046. R2|[링크](./%EB%B0%B1%EC%A4%80/Bronze/3046.%E2%80%85R2/README.md)|
