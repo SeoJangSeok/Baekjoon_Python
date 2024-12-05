@@ -1,9 +1,7 @@
-test_case = int(input())
-case = []
+import sys
 
-for i in range(test_case):
-    a, b = map(int, input().split())
-    case.append(a + b)
-    
-for i in range(test_case):
-    print(f'Case #{i+1}: {case[i]}')
+T = int(input())
+
+for i in range(T):
+    A, B = map(int, sys.stdin.readline().split())
+    print(f'Case #{i + 1}: {A + B}')
