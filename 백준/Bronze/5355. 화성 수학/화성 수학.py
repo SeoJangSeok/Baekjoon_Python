@@ -3,7 +3,7 @@ import sys
 T = int(input())
 
 for i in range(T):
-    l = list(sys.stdin.readline().split())
+    l = sys.stdin.readline().split()
     sum = 0
     for j in range(len(l)):
         if j == 0:
