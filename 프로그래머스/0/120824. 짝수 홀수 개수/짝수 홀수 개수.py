@@ -1,10 +1,5 @@
 def solution(num_list):
-    even = []
-    odd = []
+    answer = [0, 0]
     for i in num_list:
-        if i % 2 == 0:
-            even.append(i)
-        else:
-            odd.append(i)
-    return [len(even), len(odd)]
-            
+        answer[i % 2] += 1
+    return answer
