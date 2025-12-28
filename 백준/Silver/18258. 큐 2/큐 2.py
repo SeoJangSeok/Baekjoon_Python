@@ -1,25 +1,21 @@
+from collections import deque
 import sys
 input = sys.stdin.readline
 
 n = int(input())
-queue = []
-head = 0
+queue = deque()
 
 for _ in range(n):
     cmd = input().split()
     if cmd[0] == 'push':
         queue.append(cmd[1])
     elif cmd[0] == 'pop':
-        if head == len(queue):
-            print(-1)
-        else:
-            print(queue[head])
-            head += 1
+        print(queue.popleft() if queue else -1)
     elif cmd[0] == 'size':
-        print(len(queue) - head)
+        print(len(queue))
     elif cmd[0] == 'empty':
-        print(1 if head == len(queue) else 0)
+        print(0 if queue else 1)
     elif cmd[0] == 'front':
-        print(-1 if head == len(queue) else queue[head])
+        print(queue[0] if queue else -1)
     elif cmd[0] == 'back':
-        print(-1 if head == len(queue) else queue[-1])
+        print(queue[-1] if queue else -1)
