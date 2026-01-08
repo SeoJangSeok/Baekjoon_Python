@@ -6,9 +6,9 @@ dancer = {'ChongChong'}
 
 for _ in range(n):
     a, b = input().split()
-    if a in dancer and b not in dancer:
+    if a in dancer:
         dancer.add(b)
-    elif b in dancer and a not in dancer:
+    elif b in dancer:
         dancer.add(a)
 
 print(len(dancer))
