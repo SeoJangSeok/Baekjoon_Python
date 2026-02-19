@@ -5,14 +5,12 @@ city = int(input())
 km = list(map(int, input().split()))
 cost = list(map(int, input().split()))
 
-cost.pop()
-min_cost = min(cost)
+min_cost = cost[0]
 total_cost = 0
 
-for i, c in enumerate(cost):
-    if c == min_cost:
-        total_cost += sum(km[i:]) * c
-        break
-    else:
-        total_cost += km[i] * c
+for i in range(city - 1):
+    if cost[i] < min_cost:
+        min_cost = cost[i]
+    total_cost += min_cost * km[i]
+    
 print(total_cost)
