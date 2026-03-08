@@ -9,7 +9,7 @@ while start <= end:
     
     for h in height:
         if h > mid:
-            total += h - mid
+            total += (h - mid)
     
     if total < M:
         end = mid - 1
