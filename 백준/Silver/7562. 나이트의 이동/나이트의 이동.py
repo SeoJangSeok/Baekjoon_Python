@@ -1,33 +1,31 @@
 from collections import deque
 import sys
+
 input = sys.stdin.readline
 
-t = int(input().rstrip())
-
-
-def bfs() :
-    dx = [-1, 1, 2, 2, 1, -1, -2, -2]
-    dy = [2, 2, 1, -1, -2, -2, -1, 1]
-
+def bfs(si, sj):
+    dx = [1, -1, 2, -2, 1, -1, 2, -2] # row
+    dy = [2, 2, 1, 1, -2, -2, -1, -1] # col
+    
     q = deque()
-    q.append((startX, startY))
-    while q :
-        x, y = q.popleft()
-        if x == endX and y == endY :
-            return matrix[x][y] -1 
-        for i in range(8) :
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if 0<=nx<l and 0<=ny<l and matrix[nx][ny] == 0 :
-                matrix[nx][ny] = matrix[x][y] + 1
-                q.append((nx,ny))
-                
-            
-        
-for _ in range(t) :
-    l = int(input().rstrip())
-    startX, startY = map(int, input().rstrip().split())
-    endX, endY = map(int, input().rstrip().split())
-    matrix = [[0]*l for _ in range(l)]
-    matrix[startX][startY] = 1
-    print(bfs())
+    q.append((si, sj))
+    while q:
+        ci, cj = q.popleft()
+        if ci==di and cj==dj: # 현재 위치가 목표 위치일 경우
+            return chess_board[ci][cj]
+        for i in range(8):
+            ni = ci + dx[i]
+            nj = cj + dy[i]
+            if 0<=ni<l and 0<=nj<l and chess_board[ni][nj]==0:
+                chess_board[ni][nj] = chess_board[ci][cj] + 1
+                q.append((ni, nj))
+
+T = int(input()) # Test_case
+
+
+for _ in range(T):
+    l = int(input()) # 체스판의 한 변의 길이
+    chess_board = [[0]*l for _ in range(l)] # l x l 크기의 chess판
+    si, sj = map(int, input().split()) # 현재 위치 
+    di, dj = map(int, input().split()) # 목표 위치
+    print(bfs(si, sj))
